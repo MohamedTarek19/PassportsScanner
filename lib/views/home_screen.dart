@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
 import 'package:streams_ex/app_cubits/database_cubit.dart';
 import 'package:streams_ex/views/passports_list.dart';
 import 'package:streams_ex/views/scanner_screen.dart';
@@ -11,9 +12,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        title: const Text("Home Screen"),
+        title: const Center(child: Text("Home Screen")),
       ),
       body: Container(
         margin: const EdgeInsets.only(left: 15, right: 15),
@@ -21,11 +22,19 @@ class HomeScreen extends StatelessWidget {
           children: [
             Expanded(
               child: Column(
-                children: const [
-                  Spacer(),
-                  Text('Welcome to Passport scanner app!',
+                children: [
+                  const Spacer(
+                    flex: 2,
+                  ),
+                  const Text('Welcome to Passport scanner app!',
                     style: TextStyle(fontSize: 20),),
-                  Spacer(),
+                  const Spacer(),
+                  Lottie.asset('assets/pass3.json',
+                    width: MediaQuery.of(context).size.width*0.8,
+                    height: MediaQuery.of(context).size.height*0.4
+
+                  ),
+
                 ],
               ),
             ),
