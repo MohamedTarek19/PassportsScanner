@@ -21,20 +21,26 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
+              flex: 2,
+              child: Container(
 
-              child: Column(
-                children: [
-                  const Spacer(
-                    flex: 2,
-                  ),
-                  const Text('Welcome to Passport scanner app!',
-                    style: TextStyle(fontSize: 20),),
-                  const Spacer(),
-                  Lottie.asset('assets/pass3.json',
-                    width: MediaQuery.of(context).size.width*0.8,
-                    height: MediaQuery.of(context).size.height*0.3
-                  ),
-                ],
+                child: Column(
+                  children: [
+                    const Spacer(
+                      flex: 1,
+                    ),
+                    const Text('Welcome to Passport scanner app!',
+                      style: TextStyle(fontSize: 20),),
+                    const Spacer(),
+                    Lottie.asset('assets/pass3.json',
+                      width: MediaQuery.of(context).size.width*0.8,
+                      height: MediaQuery.of(context).size.height*0.3
+                    ),
+                    const Spacer(
+                      flex: 7,
+                    ),
+                  ],
+                ),
               ),
             ),
             Expanded(
