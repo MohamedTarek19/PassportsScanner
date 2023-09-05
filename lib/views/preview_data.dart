@@ -1,13 +1,7 @@
-
 import 'dart:io';
-
-import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:streams_ex/app_cubits/database_cubit.dart';
-import 'package:streams_ex/app_cubits/mrz_cubit.dart';
-import 'package:streams_ex/models/passport_datamodel.dart';
 import 'package:streams_ex/widgets/captured_tile.dart';
 
 class PreviewData extends StatelessWidget {
@@ -18,7 +12,7 @@ class PreviewData extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: const Center(child: Text('Captured data')),
+        title: const Center(child: Text('Preview data')),
       ),
       body: BlocBuilder<DatabaseCubit, DatabaseState>(
         builder: (context, state) {

@@ -4,7 +4,7 @@ import 'package:lottie/lottie.dart';
 import 'package:streams_ex/app_cubits/database_cubit.dart';
 import 'package:streams_ex/views/passports_list.dart';
 import 'package:streams_ex/views/scanner_screen.dart';
-import 'package:streams_ex/widgets/sign_up_button.dart';
+import 'package:streams_ex/widgets/custom_buttons.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,6 +21,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
+
               child: Column(
                 children: [
                   const Spacer(
@@ -31,10 +32,8 @@ class HomeScreen extends StatelessWidget {
                   const Spacer(),
                   Lottie.asset('assets/pass3.json',
                     width: MediaQuery.of(context).size.width*0.8,
-                    height: MediaQuery.of(context).size.height*0.4
-
+                    height: MediaQuery.of(context).size.height*0.3
                   ),
-
                 ],
               ),
             ),
