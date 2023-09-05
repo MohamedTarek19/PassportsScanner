@@ -28,15 +28,29 @@ class PreviewData extends StatelessWidget {
               child: Column(
                 children: [
                   Expanded(
-                    child: Container(
-                      margin: EdgeInsets.only(left: 10, right: 10, top: 10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
-                              alignment: Alignment.center,
-                              fit: BoxFit.fitWidth,
-                              image: FileImage(
-                                  File(context.read<DatabaseCubit>().item?.image??'')))),
+                    child: InkWell(
+                      onTap: (){
+                        showDialog(context: context, builder: (BuildContext context) {
+                          return AlertDialog(
+                            content: Image.file(File(context.read<DatabaseCubit>().item?.image??'')),
+                            actions: [
+                              ElevatedButton(onPressed: (){
+                                Navigator.pop(context);
+                              }, child: Text("Ok")),
+                            ],
+                          );
+                        });
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(left: 10, right: 10, top: 10),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: DecorationImage(
+                                alignment: Alignment.center,
+                                fit: BoxFit.fitWidth,
+                                image: FileImage(
+                                    File(context.read<DatabaseCubit>().item?.image??'')))),
+                      ),
                     ),
                   ),
                   Expanded(

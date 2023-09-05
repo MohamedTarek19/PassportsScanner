@@ -30,9 +30,11 @@ class ScannerScreen extends StatelessWidget {
                 shape: BoxShape.circle,
                   ),
                   child: (state is onMrzWaiting || context.read<MrzCubit>().flag == false)
-                  ? const CircularProgressIndicator(
-                      color: Colors.purple,
-                    )
+                  ? Center(
+                    child: const CircularProgressIndicator(
+                        color: Colors.purple,
+                      ),
+                  )
                   : IconButton(
                       iconSize: 50,
                       onPressed: () {
