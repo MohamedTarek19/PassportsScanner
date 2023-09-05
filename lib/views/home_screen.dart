@@ -23,7 +23,6 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               flex: 2,
               child: Container(
-
                 child: Column(
                   children: [
                     const Spacer(

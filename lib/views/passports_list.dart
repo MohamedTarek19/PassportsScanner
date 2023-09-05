@@ -18,7 +18,7 @@ class PassportsList extends StatelessWidget {
           return Column(
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.8,
+                height: MediaQuery.of(context).size.height * 0.87,
                 width: MediaQuery.of(context).size.width,
                 child: ListView.builder(
                   itemCount: context
