@@ -14,41 +14,41 @@ class ScannerScreen extends StatelessWidget {
     return BlocBuilder<MrzCubit, MrzState>(
       builder: (context, state) {
         return Scaffold(
-          body: Screenshot(
-            controller: screenshotController,
-            child: Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                context
+          body: Stack(
+            alignment: Alignment.bottomCenter,
+            children: [
+              Screenshot(
+                controller: screenshotController,
+                child: context
                     .read<MrzCubit>()
                     .ShowScanner(controller, screenshotController),
-                Container(
-                  width: 70,
-                  height: 70,
-                  decoration: const BoxDecoration(
-                color: Colors.white,
-                shape: BoxShape.circle,
-                  ),
-                  child: (state is onMrzWaiting || context.read<MrzCubit>().flag == false)
-                  ? const Center(
-                    child: CircularProgressIndicator(
-                        color: Colors.purple,
-                      ),
-                  )
-                  : IconButton(
-                      iconSize: 50,
-                      onPressed: () {
-                        controller.currentState?.resetScanning();
-                        Navigator.push(context, MaterialPageRoute(
-                            builder: (BuildContext context) {
-                          return const CapturedData();
-                        }));
-                      },
-                      icon: const Center(child: Icon(Icons.camera)),
-                    ),
+              ),
+              Container(
+                width: 70,
+                height: 70,
+                decoration: const BoxDecoration(
+              color: Colors.white,
+              shape: BoxShape.circle,
                 ),
-              ],
-            ),
+                child: (state is onMrzWaiting || context.read<MrzCubit>().flag == false)
+                ? const Center(
+                  child: CircularProgressIndicator(
+                      color: Colors.purple,
+                    ),
+                )
+                : IconButton(
+                    iconSize: 50,
+                    onPressed: () {
+                      controller.currentState?.resetScanning();
+                      Navigator.push(context, MaterialPageRoute(
+                          builder: (BuildContext context) {
+                        return const CapturedData();
+                      }));
+                    },
+                    icon: const Center(child: Icon(Icons.camera)),
+                  ),
+              ),
+            ],
           ),
         );
       },
